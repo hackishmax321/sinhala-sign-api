@@ -37,7 +37,7 @@ def preprocess_image(image: Image.Image) -> np.ndarray:
     normalized_image_array = (image_array / 127.5) - 1  # Normalize
     return np.expand_dims(normalized_image_array, axis=0)  # Add batch dimension
 
-@app.post("/predict-emotion")
+@app.post("/predict-handsigns-alphabet")
 async def predict(file: UploadFile = File(...)):
     try:
         # Read image file
